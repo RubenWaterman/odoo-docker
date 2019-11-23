@@ -10,7 +10,7 @@ class LnCashback(models.Model):
     )
 
     ln_url = fields.Char("LN URL")
-    satoshis = fields.Integer("Change in Satoshi 2")
+    satoshis = fields.Integer("Change in Satoshi")
     fiat_change = fields.Float("Change in Fiat")
     pos_statement_id = fields.Many2one(
         "pos.order", string="POS statement", ondelete="cascade"
@@ -30,6 +30,8 @@ class LnCashback(models.Model):
     """,
     )
 
+    exchange_rate = fields.Float(compute="_fx_rate")
+
     randomnum = fields.Char(compute="_compute_rand")
 
     @api.multi
@@ -42,6 +44,13 @@ class LnCashback(models.Model):
         for item in self:
             item.satoshis = 5000
         return True
+
+    @api.depends('fiat_change','satoshis')
+    def _fx_rate(self):
+        if not self.fiat_change and self.satoshis:
+            pass
+        else:
+            self.exchange_rate = float(self.satoshis) / self.fiat_change
 
 
 # class ln_cashback2(models.Model):

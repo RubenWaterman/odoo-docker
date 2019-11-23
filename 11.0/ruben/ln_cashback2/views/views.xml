@@ -13,6 +13,7 @@
           <field name="pos_statement_id"/>
           <field name="ln_status"/>
           <field name="randomnum"/>
+          <field name="exchange_rate"/>
 
         </tree>
       </field>
