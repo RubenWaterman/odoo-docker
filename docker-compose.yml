@@ -6,6 +6,8 @@ services:
       - db
     ports:
       - "8069:8069"
+    volumes:
+      - /Users/rubenwaterman/Projects/odoo-docker/11.0/ruben:/mnt/extra-addons
   db:
     image: postgres:10
     environment:

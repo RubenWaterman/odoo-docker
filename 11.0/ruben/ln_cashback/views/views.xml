@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="ln_cashback/.list">
+      <field name="name">ln_cashback/ list</field>
+      <field name="model">ln_cashback/.ln_cashback/</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="ln_cashback/.action_window">
+      <field name="name">ln_cashback/ window</field>
+      <field name="res_model">ln_cashback/.ln_cashback/</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="ln_cashback/.action_server">
+      <field name="name">ln_cashback/ server</field>
+      <field name="model_id" ref="model_ln_cashback/_ln_cashback/"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="ln_cashback/" id="ln_cashback/.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="ln_cashback/.menu_1" parent="ln_cashback/.menu_root"/>
+    <menuitem name="Menu 2" id="ln_cashback/.menu_2" parent="ln_cashback/.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="ln_cashback/.menu_1_list" parent="ln_cashback/.menu_1"
+              action="ln_cashback/.action_window"/>
+    <menuitem name="Server to list" id="ln_cashback/" parent="ln_cashback/.menu_2"
+              action="ln_cashback/.action_server"/>
+    -->
+  </data>
+</odoo>
