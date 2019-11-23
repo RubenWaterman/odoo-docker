@@ -44,8 +44,8 @@ class LnCashback(models.Model):
         return True
 
 
-# class ln_cashback(models.Model):
-#     _name = 'ln_cashback.ln_cashback'
+# class ln_cashback2(models.Model):
+#     _name = 'ln_cashback2.ln_cashback2'
 
 #     name = fields.Char()
 #     value = fields.Integer()

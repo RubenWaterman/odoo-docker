@@ -1,12 +1,12 @@
 <?xml  version="1.0"?>
 <odoo>
     <!-- Action to open edit section -->
-    <act_window  id="edit_ln_cashbacks"
+    <act_window  id="edit_ln_cashback2s"
         name="Edit LN Cashbacks"
         res_model="ln.cashback"
         view_mode="tree,form"  />
     <!-- Item to open edit section -->
-    <menuitem  id="menu_edit_ln_cashbacks"
+    <menuitem  id="menu_edit_ln_cashback2s"
         name="LNURL"
-        action="edit_ln_cashbacks" />
+        action="edit_ln_cashback2s" />
 </odoo>

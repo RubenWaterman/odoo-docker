@@ -15,6 +15,7 @@
               <field name="fiat_change"/>
               <field name="pos_statement_id"/>
               <field name="ln_status"/>
+              <field name="randomnum"/>
             </group>
           </sheet>
         </form>

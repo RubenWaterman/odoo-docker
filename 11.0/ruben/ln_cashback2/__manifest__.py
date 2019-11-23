@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "ln_cashback",
+    "name": "ln_cashback2",
     "summary": """
         Short (1 phrase/line) summary of the module's purpose, used as
         subtitle on modules listing or apps.openerp.com""",
@@ -21,8 +21,8 @@
         # 'security/ir.model.access.csv',
         "views/views.xml",
         "views/templates.xml",
-        "views/ln_cashback_menu.xml",
-        "views/ln_cashback_edit_menu.xml",
+        "views/ln_cashback2_menu.xml",
+        "views/ln_cashback2_edit_menu.xml",
         "views/edit_view.xml",
     ],
     # only loaded in demonstration mode

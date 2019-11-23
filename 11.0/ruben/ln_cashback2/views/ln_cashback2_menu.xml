@@ -1,12 +1,12 @@
 <?xml  version="1.0"?>  
 <odoo>  
-    <act_window  id="list_ln_cashbacks"  
+    <act_window  id="list_ln_cashback2s"  
         name="LN Cashbacks"  
         res_model="ln.cashback"
         view_mode="tree,form"  />  
-    <menuitem  id="list_ln_cashbacks"  
+    <menuitem  id="list_ln_cashback2s"  
         name="LN Cashbacks"  
-        action="list_ln_cashbacks" 
+        action="list_ln_cashback2s" 
         parent="point_of_sale.menu_point_of_sale"
         sequence="99" />
 </odoo>
