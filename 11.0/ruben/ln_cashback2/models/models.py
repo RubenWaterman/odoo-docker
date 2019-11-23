@@ -45,14 +45,19 @@ class LnCashback(models.Model):
             item.satoshis = 5000
         return True
 
-    @api.multi
-    @api.depends("fiat_change", "satoshis")
+    @api.depends("fiat_change")
     def _fx_rate(self):
-        for item in self:
-            if not self.fiat_change or not self.satoshis:
-                self.exchange_rate = 0
-            else:
-                self.exchange_rate = float(self.satoshis) / self.fiat_change
+        if not self.satoshis:
+            pass
+        else:
+            self.exchange_rate = float(self.satoshis) / self.fiat_change
+
+    @api.depends("satoshis")
+    def _fx_rate(self):
+        if not self.fiat_change:
+            pass
+        else:
+            self.exchange_rate = float(self.satoshis) / self.fiat_change
 
 
 # class ln_cashback2(models.Model):
