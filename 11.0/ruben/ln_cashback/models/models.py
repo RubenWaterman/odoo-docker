@@ -2,6 +2,14 @@
 
 from odoo import models, fields, api
 
+class LnCashback(models.Model):
+    _name = 'ln.cashback'
+    _description = 'A LN cashback receipt, belonging to a receipt generated in the POS application'
+
+    ln_url = fields.Char('LN URL')
+    satoshis = fields.Integer('Amount of Satoshis')
+    pos_statement_id = fields.Many2one('pos.order', string="POS statement", ondelete='cascade')
+
 # class ln_cashback(models.Model):
 #     _name = 'ln_cashback.ln_cashback'
 
