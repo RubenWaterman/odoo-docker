@@ -23,7 +23,7 @@
         "views/templates.xml",
         "views/ln_cashback_menu.xml",
         "views/ln_cashback_edit_menu.xml",
-        "edit_view.xml",
+        "views/edit_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": ["demo/demo.xml",],
