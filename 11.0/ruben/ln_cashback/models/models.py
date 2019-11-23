@@ -10,7 +10,7 @@ class LnCashback(models.Model):
     )
 
     ln_url = fields.Char("LN URL")
-    satoshis = fields.Integer("Change in Satoshi")
+    satoshis = fields.Integer("Change in Satoshi 2")
     fiat_change = fields.Float("Change in Fiat")
     pos_statement_id = fields.Many2one(
         "pos.order", string="POS statement", ondelete="cascade"
