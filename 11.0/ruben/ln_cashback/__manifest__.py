@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ln_cashback/",
+    'name': "ln_cashback",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Give PoS customers the option to receive change back in satoshis, instead of coins.
+        """,
 
     'description': """
-        Long description of module's purpose
+        Give PoS customers the option to receive change back in satoshis, instead of coins.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "@21isenough / @watermaniak",
+    'website': "https://www.twitter.com/21isenough",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Point of Sale',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
