@@ -12,6 +12,9 @@
             <group>
               <field name="ln_url"/>
               <field name="satoshis"/>
+              <field name="fiat_change"/>
+              <field name="pos_statement_id"/>
+              <field name="ln_status"/>
             </group>
           </sheet>
         </form>

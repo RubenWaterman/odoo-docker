@@ -1,19 +1,22 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <!--
+    
     <record model="ir.ui.view" id="ln_cashback.list">
-      <field name="name">ln_cashback list</field>
-      <field name="model">ln_cashback.ln_cashback</field>
+      <field name="name">LN Cashback List</field>
+      <field name="model">ln.cashback</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="ln_url"/>
+          <field name="satoshis"/>
+          <field name="fiat_change"/>
+          <field name="pos_statement_id"/>
+          <field name="ln_status"/>
+
         </tree>
       </field>
     </record>
-    -->
+   
 
     <!-- actions opening views on models -->
     <!--

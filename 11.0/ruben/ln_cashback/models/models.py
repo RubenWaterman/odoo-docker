@@ -10,10 +10,22 @@ class LnCashback(models.Model):
     )
 
     ln_url = fields.Char("LN URL")
-    satoshis = fields.Integer("Amount of Satoshis")
+    satoshis = fields.Integer("Change in Satoshi")
+    fiat_change = fields.Float("Change in Fiat")
     pos_statement_id = fields.Many2one(
         "pos.order", string="POS statement", ondelete="cascade"
     )
+    ln_status = fields.Selection([
+        ('PENDING', 'Pending LN Payment'),
+        ('CLAIMED', 'Claimed LN Payment'),
+        ('EXPIRED', 'Expired LN Payment'),
+        ('CANCELLED', 'Cancelled LN Payment'),
+    ], help="""
+* Pending LN Payment -- LNURL that still needs to be claimed by customer
+* Claimed LN Payment -- LNURL claimed by customer
+* Expired LN Payment -- Customer did not claim LNURL
+* Cancelled LN Payment -- We cancelled the LNURL
+    """)
 
     @api.multi
     def add_sats(self):
