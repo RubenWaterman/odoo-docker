@@ -10,6 +10,8 @@ services:
       - /Users/rubenwaterman/Projects/odoo-docker/11.0/ruben:/mnt/extra-addons
   db:
     image: postgres:10
+    ports:
+      - "32767:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
