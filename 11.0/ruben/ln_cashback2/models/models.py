@@ -54,7 +54,7 @@ class LnCashback(models.Model):
 
     @api.multi
     def sat_amount(self):
-        fx_rate(self)
+        self.fx_rate()
         for item in self:
             btc_eur_fx_rate = 1 / item.exchange_rate
             sat_eur_fx_rate = btc_eur_fx_rate * 100000000

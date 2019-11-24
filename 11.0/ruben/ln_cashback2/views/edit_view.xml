@@ -6,7 +6,7 @@
       <field name="arch" type="xml">
         <form string="Edit LNURL entries">
           <header>
-            <button name="add_sats" type="object" string="Add Sats" />
+            <button name="sat_amount" type="object" string="Calculate Sats" />
             <button name="fx_rate" type="object" string="Add FX rate" />
           </header>
           <sheet>
