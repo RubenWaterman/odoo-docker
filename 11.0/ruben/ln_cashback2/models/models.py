@@ -36,15 +36,6 @@ class LnCashback(models.Model):
     # exchange_rate = fields.Float(compute="_fx_rate")
     exchange_rate = fields.Float()
 
-    randomnum = fields.Char(compute="_compute_rand")
-
-    @api.multi
-    def _compute_rand(self):
-        for item in self:
-            if not item.randomnum:
-                item.randomnum = str(random.randint(1, 1e6))
-        return True
-
     @api.multi
     def add_sats(self):
         for item in self:
