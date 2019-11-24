@@ -33,7 +33,8 @@ class LnCashback(models.Model):
     """,
     )
 
-    exchange_rate = fields.Float(compute="_fx_rate")
+    # exchange_rate = fields.Float(compute="_fx_rate")
+    exchange_rate = fields.Float()
 
     randomnum = fields.Char(compute="_compute_rand")
 
@@ -41,6 +42,7 @@ class LnCashback(models.Model):
     def _compute_rand(self):
         for record in self:
             record.randomnum = str(random.randint(1, 1e6))
+        return True
 
     @api.multi
     def add_sats(self):
@@ -48,13 +50,15 @@ class LnCashback(models.Model):
             item.satoshis = 5000
         return True
 
-    @api.depends("fiat_change")
-    def _fx_rate(self):
-        price_request = requests.get(
-            "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR"
-        )
-        price_json = json.loads(price_request.text)
-        self.exchange_rate = price_json["last"]
+    @api.multi
+    def fx_rate(self):
+        for item in self:
+            price_request = requests.get(
+                "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR"
+            )
+            price_json = json.loads(price_request.text)
+            item.exchange_rate = price_json["last"]
+        return True
 
 
 # class ln_cashback2(models.Model):
