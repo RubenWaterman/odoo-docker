@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import random
+import requests
+import json
+
 from odoo import models, fields, api
 
 
@@ -47,17 +50,11 @@ class LnCashback(models.Model):
 
     @api.depends("fiat_change")
     def _fx_rate(self):
-        if not self.satoshis:
-            pass
-        else:
-            self.exchange_rate = float(self.satoshis) / self.fiat_change
-
-    @api.depends("satoshis")
-    def _fx_rate(self):
-        if not self.fiat_change:
-            pass
-        else:
-            self.exchange_rate = float(self.satoshis) / self.fiat_change
+        price_request = requests.get(
+            "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR"
+        )
+        price_json = json.loads(price_request.text)
+        self.exchange_rate = price_json["last"]
 
 
 # class ln_cashback2(models.Model):
