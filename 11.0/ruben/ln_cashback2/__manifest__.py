@@ -15,7 +15,7 @@
     "category": "Uncategorized",
     "version": "0.1",
     # any module necessary for this one to work correctly
-    "depends": ["base","point_of_sale"],
+    "depends": ["base", "point_of_sale"],
     # always loaded
     "data": [
         # 'security/ir.model.access.csv',
@@ -24,6 +24,7 @@
         "views/ln_cashback2_menu.xml",
         "views/ln_cashback2_edit_menu.xml",
         "views/edit_view.xml",
+        "views/account_journal_views.xml",
     ],
     # only loaded in demonstration mode
     "demo": ["demo/demo.xml",],
