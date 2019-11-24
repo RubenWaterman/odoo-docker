@@ -40,8 +40,9 @@ class LnCashback(models.Model):
 
     @api.multi
     def _compute_rand(self):
-        for record in self:
-            record.randomnum = str(random.randint(1, 1e6))
+        for item in self:
+            if not item.randomnum:
+                item.randomnum = str(random.randint(1, 1e6))
         return True
 
     @api.multi
